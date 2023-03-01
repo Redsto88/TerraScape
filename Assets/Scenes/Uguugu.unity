@@ -125,12 +125,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &146785835 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5499175229218478004, guid: bfe8fd53a659aad438ead1fa8983e482,
-    type: 3}
-  m_PrefabInstance: {fileID: 5499175229090304415}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -269,96 +263,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1091519646 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5499175229218478000, guid: bfe8fd53a659aad438ead1fa8983e482,
-    type: 3}
-  m_PrefabInstance: {fileID: 5499175229090304415}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 146785835}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6803edce0201f574f923fd9d10e5b30a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1091519647
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 146785835}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1b738292a2d01d4bbcf72191223f2dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _toolAction:
-    m_Name: Tool
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 90c10184-fddb-4de2-8b1b-2af92bf6b8a8
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 81fa7b3b-3a55-44eb-a935-a2d26388ecd9
-      m_Path: <XRController>{RightHand}/trigger
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Tool
-      m_Flags: 0
-    m_Flags: 0
-  _rayInteractor: {fileID: 1091519646}
---- !u!1 &1111918561 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5499175230134326910, guid: bfe8fd53a659aad438ead1fa8983e482,
-    type: 3}
-  m_PrefabInstance: {fileID: 5499175229090304415}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1111918565 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5499175230134326906, guid: bfe8fd53a659aad438ead1fa8983e482,
-    type: 3}
-  m_PrefabInstance: {fileID: 5499175229090304415}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1111918561}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6803edce0201f574f923fd9d10e5b30a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1111918567
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1111918561}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1b738292a2d01d4bbcf72191223f2dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _toolAction:
-    m_Name: Tool
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 215e7c65-bb01-4c32-9540-0287c427f2e2
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: c6d278a2-cb6e-480b-af56-12683a7c1743
-      m_Path: <XRController>{LeftHand}/trigger
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Tool
-      m_Flags: 0
-    m_Flags: 0
-  _rayInteractor: {fileID: 1111918565}
 --- !u!1 &1345094803
 GameObject:
   m_ObjectHideFlags: 0
@@ -404,24 +308,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1682125065 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5499175229091102958, guid: bfe8fd53a659aad438ead1fa8983e482,
-    type: 3}
-  m_PrefabInstance: {fileID: 5499175229090304415}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1682125069
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1682125065}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39bc1417e58edaa4f8a98756389aa42d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1696020876
 GameObject:
   m_ObjectHideFlags: 0
@@ -433,7 +319,6 @@ GameObject:
   - component: {fileID: 1696020879}
   - component: {fileID: 1696020878}
   - component: {fileID: 1696020877}
-  - component: {fileID: 1696020881}
   - component: {fileID: 1696020880}
   m_Layer: 0
   m_Name: Terrain
@@ -552,7 +437,7 @@ MonoBehaviour:
   m_Activated:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1696020881}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: TerrainInteraction, Assembly-CSharp
         m_MethodName: OnToolUse
         m_Mode: 0
@@ -594,18 +479,6 @@ MonoBehaviour:
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &1696020881
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1696020876}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4715407fa83e484d98d9ebfd7b4eda2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1786190751 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3393687242410725951, guid: 753c9b3065f7ce343846e073ca3583ec,
