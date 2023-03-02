@@ -11,4 +11,10 @@ public class GameManager : Singleton<GameManager>
     private void Start() {
         //tool = new AddHeightTool();
     }
+
+    public void UpdateToolSize(float newSize)
+    {
+        tool.ChangeSize(newSize);
+        Debug.Log(newSize);
+    }
 }

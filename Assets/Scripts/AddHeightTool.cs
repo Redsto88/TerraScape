@@ -9,6 +9,11 @@ public class AddHeightTool : TerrainTool
     [SerializeField] float radius = 3f;
     [SerializeField] AnimationCurve fallOff;//TODO: use
 
+    public override void ChangeSize(float newSize)
+    {
+        radius = newSize;
+    }
+    
     public void ApplyTool2(Vector3 pos, Vector3 normal, Terrain terrain)
     {
         TerrainData terrainData = terrain.terrainData;
