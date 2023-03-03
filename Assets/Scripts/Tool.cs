@@ -2,8 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class TerrainTool : ScriptableObject
+public abstract class TerrainTool : MonoBehaviour
 {
-    abstract public void ApplyTool(Vector3 pos, Vector3 normal, Terrain terrainData);
-    abstract public void ChangeSize(float newSize);
+    [SerializeField] GameObject paramMenu;
+    public GameObject ParamMenu => paramMenu;
+
+    [SerializeField] GameObject reticle;
+
+    abstract public void Apply(Vector3 pos, Vector3 normal, Terrain terrainData);
+    public virtual void ApplySecondary(Vector3 pos, Vector3 normal, Terrain terrainData)
+    {
+        Apply(pos, normal, terrainData);
+    }
+
+    public virtual void OnStart(){}
+    public virtual void OnEnd(){}
 }
