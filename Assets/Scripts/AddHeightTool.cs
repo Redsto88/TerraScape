@@ -4,12 +4,9 @@ using UnityEngine;
 
 public class AddHeightTool : TerrainTool
 {
-    [SerializeField] Sprite icon;
     [SerializeField] float strength = 10f;
     [SerializeField] float radius = 3f;
     [SerializeField] AnimationCurve fallOff;
-
-    public Sprite Icon => icon;
 
     public void ChangeSize(float newSize)
     {
