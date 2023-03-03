@@ -12,4 +12,11 @@ public class MenuManager : MonoBehaviour
         currentMenu = newMenu;
         currentMenu.SetActive(true);
     }
+
+    public void ToolMenu()
+    {
+        currentMenu.SetActive(false);
+        currentMenu = GameManager.Tool.ParamMenu;
+        currentMenu.SetActive(true);
+    }
 }
