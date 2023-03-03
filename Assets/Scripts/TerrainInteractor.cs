@@ -10,20 +10,28 @@ public class TerrainInteractor : MonoBehaviour
     InputAction _toolAction;
 
     [SerializeField]
+    InputAction _secondaryToolAction;
+
+    [SerializeField]
     XRRayInteractor _rayInteractor;
 
 
 
     private void OnEnable() {
         _toolAction.Enable();
+        _secondaryToolAction.Enable();
     }
 
     private void OnDisable() {
         _toolAction.Disable();
+        _secondaryToolAction.Disable();
     }
 
     private void Update() {
         if(!_toolAction.IsPressed())
+            return;
+
+        if (_rayInteractor.TryGetCurrentUIRaycastResult(out _))
             return;
 
         if (!_rayInteractor.TryGetCurrent3DRaycastHit(out var raycastHit))
@@ -34,7 +42,10 @@ public class TerrainInteractor : MonoBehaviour
 
         Terrain terrain = raycastHit.collider.gameObject.GetComponent<Terrain>();
 
-        GameManager.Tool.ApplyTool(raycastHit.point, raycastHit.normal, terrain);
+        if(!_secondaryToolAction.IsPressed())
+            GameManager.Tool.Apply(raycastHit.point, raycastHit.normal, terrain);
+        else
+            GameManager.Tool.ApplySecondary(raycastHit.point, raycastHit.normal, terrain);
     }
 
 }
