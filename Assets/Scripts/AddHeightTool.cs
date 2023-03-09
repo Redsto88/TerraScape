@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class AddHeightTool : TerrainTool
 {
@@ -8,9 +9,18 @@ public class AddHeightTool : TerrainTool
     [SerializeField] float radius = 3f;
     [SerializeField] AnimationCurve fallOff;
 
+    [SerializeField] UnityEvent<float> radiusCallback;
+    [SerializeField] UnityEvent<float> strengthCallback;
+
+    private void Start() {
+        radiusCallback.Invoke(radius);
+        strengthCallback.Invoke(strength);
+    }
+
     public void ChangeSize(float newSize)
     {
         radius = newSize;
+        reticle.SetSize(newSize);
     }
 
     public void ChangeStrength(float newStrength)
