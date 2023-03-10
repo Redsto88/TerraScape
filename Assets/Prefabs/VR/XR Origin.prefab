@@ -904,10 +904,10 @@ MonoBehaviour:
       m_Flags: 0
     m_Flags: 0
   _secondaryToolAction:
-    m_Name: 
+    m_Name: Secondary Tool
     m_Type: 0
     m_ExpectedControlType: 
-    m_Id: bcb91651-f882-4e99-8afb-7b627995205e
+    m_Id: af8b1b4a-6dd6-4c0a-9071-b94611cb2206
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings: []
@@ -1627,7 +1627,7 @@ MonoBehaviour:
     m_Name: 
     m_Type: 0
     m_ExpectedControlType: 
-    m_Id: a4cacd92-1875-4108-8d2f-7b3030f488eb
+    m_Id: 
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings: []
@@ -1640,6 +1640,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5499175230134326909}
     m_Modifications:
+    - target: {fileID: 424274960734861461, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_Name
+      value: PaintTool
+      objectReference: {fileID: 0}
+    - target: {fileID: 614158613656797319, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_text
+      value: Paint
+      objectReference: {fileID: 0}
     - target: {fileID: 1122729981829519080, guid: 129b25d7f17a16245830ecc146ebe2ff,
         type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -1870,10 +1880,35 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5192535404488268493, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5192535404488268494, guid: 129b25d7f17a16245830ecc146ebe2ff,
         type: 3}
       propertyPath: m_Name
       value: ToolMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 5452348466266034902, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5452348466266034902, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ToolMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 5452348466266034902, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5452348466266034902, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7301482080147932157, guid: 129b25d7f17a16245830ecc146ebe2ff,
         type: 3}
