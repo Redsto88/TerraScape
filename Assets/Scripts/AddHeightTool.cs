@@ -28,7 +28,7 @@ public class AddHeightTool : TerrainTool
         strength = newStrength;
     }
 
-    public override void Apply(Vector3 pos, Vector3 normal, Terrain terrain)
+    public override void Apply(Vector3 pos, Vector3 normal, Terrain terrain, float multiplier = 1f)
     {
         TerrainData terrainData = terrain.terrainData;
         int resolution = terrainData.heightmapResolution;
@@ -60,11 +60,16 @@ public class AddHeightTool : TerrainTool
                 float brushX = (float)(x - minX) / (maxX - minX - 1);
 
                 float curveUV = 1f - new Vector2(Mathf.Abs(brushX - 0.5f) * 2f, Mathf.Abs(brushY - 0.5f) * 2f).magnitude;
-                newHeights[y - clampedMinY, x - clampedMinX] += (strength / terrainData.size.y) * Time.deltaTime * fallOff.Evaluate(curveUV);
+                newHeights[y - clampedMinY, x - clampedMinX] += (strength / terrainData.size.y) * Time.deltaTime * fallOff.Evaluate(curveUV) * multiplier;
             }
         }
 
         //TODO: SetHeightsDelayLOD
         terrainData.SetHeights(clampedMinX, clampedMinY, newHeights);
+    }
+
+    public override void ApplySecondary(Vector3 pos, Vector3 normal, Terrain terrainData)
+    {
+        Apply(pos, normal, terrainData, -1f);
     }
 }
