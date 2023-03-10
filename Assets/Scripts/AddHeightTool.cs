@@ -28,7 +28,7 @@ public class AddHeightTool : TerrainTool
         strength = newStrength;
     }
 
-    public override void Apply(Vector3 pos, Vector3 normal, Terrain terrain, float multiplier = 1f)
+    public void AddHeight(Vector3 pos, Terrain terrain, float multiplier = 1f)
     {
         TerrainData terrainData = terrain.terrainData;
         int resolution = terrainData.heightmapResolution;
@@ -68,8 +68,13 @@ public class AddHeightTool : TerrainTool
         terrainData.SetHeights(clampedMinX, clampedMinY, newHeights);
     }
 
+    public override void Apply(Vector3 pos, Vector3 normal, Terrain terrain)
+    {
+        AddHeight(pos, terrain);
+    }
+
     public override void ApplySecondary(Vector3 pos, Vector3 normal, Terrain terrainData)
     {
-        Apply(pos, normal, terrainData, -1f);
+        AddHeight(pos, terrainData, -1f);
     }
 }
