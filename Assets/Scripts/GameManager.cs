@@ -5,15 +5,22 @@ using UnityEngine;
 public class GameManager : Singleton<GameManager>
 {
     [SerializeField] TerrainTool _tool;
+    [SerializeField] Brush _brush;
     [SerializeField] TerrainInteractor interactor;
+    [SerializeField] List<Brush> brushes;
+
     public static TerrainTool Tool => Instance._tool;
+    public static Brush Brush => Instance._brush;
 
     public static void ChangeTool(TerrainTool tool)
     {
         Instance._tool = tool;
     }
 
-    private void Start() {
-        //tool = new AddHeightTool();
+    public static void ChangeBrush(Brush brush)
+    {
+        Instance._brush = brush;
     }
+
+    
 }
