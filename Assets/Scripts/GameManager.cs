@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class GameManager : Singleton<GameManager>
 {
-    [SerializeField]
-    TerrainTool _tool;
+    [SerializeField] TerrainTool _tool;
+    [SerializeField] TerrainInteractor interactor;
     public static TerrainTool Tool => Instance._tool;
 
     public static void ChangeTool(TerrainTool tool)

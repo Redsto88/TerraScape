@@ -15,6 +15,7 @@ public class TerrainInteractor : MonoBehaviour
     [SerializeField]
     XRRayInteractor _rayInteractor;
 
+    bool terrainHover = false;
 
 
     private void OnEnable() {
@@ -28,16 +29,29 @@ public class TerrainInteractor : MonoBehaviour
     }
 
     private void Update() {
+        
+
+        if (_rayInteractor.TryGetCurrentUIRaycastResult(out _)
+            || !_rayInteractor.TryGetCurrent3DRaycastHit(out var raycastHit)
+            || !(raycastHit.collider is TerrainCollider))
+        {
+            if(terrainHover)
+            {
+                terrainHover = false;
+                GameManager.Tool.OnLeaveHover();
+            }
+            return;
+        }
+
+        if(!terrainHover)
+        {
+            terrainHover = true;
+            GameManager.Tool.OnHoverStart();
+        }
+
+        GameManager.Tool.OnHover(raycastHit.point, raycastHit.normal);
+
         if(!_toolAction.IsPressed())
-            return;
-
-        if (_rayInteractor.TryGetCurrentUIRaycastResult(out _))
-            return;
-
-        if (!_rayInteractor.TryGetCurrent3DRaycastHit(out var raycastHit))
-            return;
-
-        if(!(raycastHit.collider is TerrainCollider))
             return;
 
         Terrain terrain = raycastHit.collider.gameObject.GetComponent<Terrain>();

@@ -4,21 +4,46 @@ using UnityEngine;
 
 public abstract class TerrainTool : MonoBehaviour
 {
-    [SerializeField] GameObject paramMenu;
+    [SerializeField] protected GameObject paramMenu;
     public GameObject ParamMenu => paramMenu;
 
-    [SerializeField] GameObject reticle;
-    public GameObject Reticle => reticle;
+    [SerializeField] protected Reticle reticle;
+    public Reticle Reticle => reticle;
 
-    [SerializeField] Sprite icon;
-    public Sprite Icon => icon;
+    bool inProgress = false;
 
-    abstract public void Apply(Vector3 pos, Vector3 normal, Terrain terrainData);
-    public virtual void ApplySecondary(Vector3 pos, Vector3 normal, Terrain terrainData)
+    abstract public void Apply(Vector3 pos, Vector3 normal, Terrain terrainData, float multiplier=1f);
+
+    public virtual void UpdateReticle(Vector3 pos, Vector3 normal)
     {
-        Apply(pos, normal, terrainData);
+        reticle.transform.position = pos;
     }
 
-    public virtual void OnStart(){}
-    public virtual void OnEnd(){}
+    public virtual void ApplySecondary(Vector3 pos, Vector3 normal, Terrain terrainData)
+    {
+        Apply(pos, normal, terrainData, -1f);
+    }
+
+    public virtual void OnUseStart(){
+        inProgress = true;
+    }
+
+    public virtual void OnUseEnd(){
+        inProgress = false;
+    }
+
+    public virtual void OnHover(Vector3 pos, Vector3 normal)
+    {
+        reticle.OnHover( pos,  normal);
+    }
+
+    public virtual void OnHoverStart()
+    {
+        reticle.gameObject.SetActive(true);
+    }
+
+    public virtual void OnLeaveHover()
+    {
+        reticle.gameObject.SetActive(false);
+    }
 }

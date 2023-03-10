@@ -15,8 +15,6 @@ public class MenuManager : MonoBehaviour
 
     public void ToolMenu()
     {
-        currentMenu.SetActive(false);
-        currentMenu = GameManager.Tool.ParamMenu;
-        currentMenu.SetActive(true);
+        ChangeMenu(GameManager.Tool.ParamMenu);
     }
 }

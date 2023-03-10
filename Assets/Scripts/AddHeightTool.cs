@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class AddHeightTool : TerrainTool
 {
@@ -8,9 +9,18 @@ public class AddHeightTool : TerrainTool
     [SerializeField] float radius = 3f;
     [SerializeField] AnimationCurve fallOff;
 
+    [SerializeField] UnityEvent<float> radiusCallback;
+    [SerializeField] UnityEvent<float> strengthCallback;
+
+    private void Start() {
+        radiusCallback.Invoke(radius);
+        strengthCallback.Invoke(strength);
+    }
+
     public void ChangeSize(float newSize)
     {
         radius = newSize;
+        reticle.SetSize(newSize);
     }
 
     public void ChangeStrength(float newStrength)
@@ -18,7 +28,7 @@ public class AddHeightTool : TerrainTool
         strength = newStrength;
     }
 
-    public override void Apply(Vector3 pos, Vector3 normal, Terrain terrain)
+    public override void Apply(Vector3 pos, Vector3 normal, Terrain terrain, float multiplier = 1f)
     {
         TerrainData terrainData = terrain.terrainData;
         int resolution = terrainData.heightmapResolution;
@@ -50,11 +60,16 @@ public class AddHeightTool : TerrainTool
                 float brushX = (float)(x - minX) / (maxX - minX - 1);
 
                 float curveUV = 1f - new Vector2(Mathf.Abs(brushX - 0.5f) * 2f, Mathf.Abs(brushY - 0.5f) * 2f).magnitude;
-                newHeights[y - clampedMinY, x - clampedMinX] += (strength / terrainData.size.y) * Time.deltaTime * fallOff.Evaluate(curveUV);
+                newHeights[y - clampedMinY, x - clampedMinX] += (strength / terrainData.size.y) * Time.deltaTime * fallOff.Evaluate(curveUV) * multiplier;
             }
         }
 
         //TODO: SetHeightsDelayLOD
         terrainData.SetHeights(clampedMinX, clampedMinY, newHeights);
+    }
+
+    public override void ApplySecondary(Vector3 pos, Vector3 normal, Terrain terrainData)
+    {
+        Apply(pos, normal, terrainData, -1f);
     }
 }

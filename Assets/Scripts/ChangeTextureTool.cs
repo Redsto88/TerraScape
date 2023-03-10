@@ -30,7 +30,7 @@ public class ChangeTextureTool : TerrainTool
         ChangeTexture((int) newTexture);
     }
 
-    public override void Apply(Vector3 pos, Vector3 normal, Terrain terrain)
+    public override void Apply(Vector3 pos, Vector3 normal, Terrain terrain, float multiplier=1f)
     {
         TerrainData terrainData = terrain.terrainData;
         int resolution = terrainData.alphamapResolution;
