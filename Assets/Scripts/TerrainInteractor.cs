@@ -51,15 +51,31 @@ public class TerrainInteractor : MonoBehaviour
 
         GameManager.Tool.OnHover(raycastHit.point, raycastHit.normal);
 
-        if(!_toolAction.IsPressed())
+        if (!_toolAction.IsPressed())
+        {
+            if (GameManager.Tool.InProgress)
+            {
+                GameManager.Tool.OnUseEnd(raycastHit);
+            }
             return;
+        }
 
         Terrain terrain = raycastHit.collider.gameObject.GetComponent<Terrain>();
 
-        if(!_secondaryToolAction.IsPressed())
+        if (!GameManager.Tool.InProgress)
+        {
+            GameManager.Tool.OnUseStart(raycastHit);
+        }
+        
+        if (!_secondaryToolAction.IsPressed())
+        {
             GameManager.Tool.Apply(raycastHit.point, raycastHit.normal, terrain);
+        }
         else
+        {
             GameManager.Tool.ApplySecondary(raycastHit.point, raycastHit.normal, terrain);
+        }
+            
     }
 
 }

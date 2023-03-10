@@ -1,17 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
-public class ChangeTextureTool : TerrainTool
+public class LevelTool : TerrainTool
 {
-    [SerializeField] float strength = 1f;
+    private float _levelHeight;
+    [SerializeField] float strength = 10f;
     [SerializeField] float radius = 3f;
-    [SerializeField] private int textureNumber;
-    [SerializeField] private int secondaryTextureNumber;
-    private int textureCount = 4;
     [SerializeField] AnimationCurve fallOff;
     
+    [SerializeField] UnityEvent<float> radiusCallback;
+    [SerializeField] UnityEvent<float> strengthCallback;
 
+    private void Start() {
+        radiusCallback.Invoke(radius);
+        strengthCallback.Invoke(strength);
+    }
+    
     public void ChangeSize(float newSize)
     {
         radius = newSize;
@@ -23,19 +29,15 @@ public class ChangeTextureTool : TerrainTool
         strength = newStrength;
     }
     
-    public void ChangeSecondaryTexture(float newTexture)
+    public override void OnUseStart(RaycastHit hit)
     {
-        secondaryTextureNumber = (int) newTexture;
+        base.OnUseStart(hit);
+        _levelHeight = hit.point.y;
     }
-    public void ChangeTexture(float newTexture)
-    {
-        textureNumber = (int)newTexture;
-    }
-
-    private void PaintTexture(Vector3 pos, int texture, Terrain terrain)
+    public override void Apply(Vector3 pos, Vector3 normal, Terrain terrain, float multiplier = 1f)
     {
         TerrainData terrainData = terrain.terrainData;
-        int resolution = terrainData.alphamapResolution;
+        int resolution = terrainData.heightmapResolution;
 
         Vector3 objectCenter = (pos - terrain.gameObject.transform.position);
         Vector2 indexSpaceCenter = new Vector2(objectCenter.x / terrainData.size.x, objectCenter.z / terrainData.size.z) * (resolution - 1);
@@ -53,7 +55,7 @@ public class ChangeTextureTool : TerrainTool
         if(clampedMinX > clampedMaxX || clampedMinY > clampedMaxY)
             throw new System.Exception("Zone incorrecte");
 
-        float[,,] newAlphas = terrainData.GetAlphamaps(clampedMinX, clampedMinY, clampedMaxX - clampedMinX, clampedMaxY - clampedMinY);
+        float[,] newHeights = terrainData.GetHeights(clampedMinX, clampedMinY, clampedMaxX - clampedMinX, clampedMaxY - clampedMinY);
 
         for (int y = clampedMinY ; y < clampedMaxY; y++)
         {
@@ -64,33 +66,22 @@ public class ChangeTextureTool : TerrainTool
                 float brushX = (float)(x - minX) / (maxX - minX - 1);
 
                 float curveUV = 1f - new Vector2(Mathf.Abs(brushX - 0.5f) * 2f, Mathf.Abs(brushY - 0.5f) * 2f).magnitude;
-                float newValue = Mathf.Clamp01(newAlphas[y - clampedMinY, x - clampedMinX, texture] +
-                                               strength * Time.deltaTime * fallOff.Evaluate(curveUV));
-                newAlphas[y - clampedMinY, x - clampedMinX, texture] = newValue;
-                //Normalisation des autres textures
-                float alphaSum = 0f;
-                for (int i = 0; i < textureCount; i++)
+                if (newHeights[y - clampedMinY, x - clampedMinX] <= _levelHeight)
                 {
-                    if (i == texture) continue;
-                    alphaSum += newAlphas[y - clampedMinY, x - clampedMinX, i];
+                    newHeights[y - clampedMinY, x - clampedMinX] = Mathf.Clamp(
+                        newHeights[y - clampedMinY, x - clampedMinX] + (strength / terrainData.size.y) *
+                        Time.deltaTime * fallOff.Evaluate(curveUV), 0, _levelHeight/terrainData.size.y);
                 }
-                for (int i = 0; i < textureCount; i++)
+                else
                 {
-                    if (i == texture) continue;
-                    newAlphas[y - clampedMinY, x - clampedMinX, i] *= (1 - newValue) / alphaSum;
+                    newHeights[y - clampedMinY, x - clampedMinX] = Mathf.Clamp(
+                            newHeights[y - clampedMinY, x - clampedMinX] - (strength / terrainData.size.y) *
+                            Time.deltaTime * fallOff.Evaluate(curveUV), _levelHeight/terrainData.size.y, terrainData.size.y);
                 }
             }
         }
 
         //TODO: SetHeightsDelayLOD
-        terrainData.SetAlphamaps(clampedMinX, clampedMinY, newAlphas);
-    }
-    public override void Apply(Vector3 pos, Vector3 normal, Terrain terrain, float multiplier=1f)
-    {
-        PaintTexture(pos, textureNumber, terrain);
-    }
-    public override void ApplySecondary(Vector3 pos, Vector3 normal, Terrain terrain)
-    {
-        PaintTexture(pos, secondaryTextureNumber, terrain);
+        terrainData.SetHeights(clampedMinX, clampedMinY, newHeights);
     }
 }
