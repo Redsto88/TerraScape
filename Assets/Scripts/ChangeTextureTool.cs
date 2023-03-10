@@ -7,6 +7,7 @@ public class ChangeTextureTool : TerrainTool
     [SerializeField] float strength = 1f;
     [SerializeField] float radius = 3f;
     [SerializeField] private int textureNumber;
+    [SerializeField] private int secondaryTextureNumber;
     private int textureCount = 4;
     [SerializeField] AnimationCurve fallOff;
     
@@ -21,16 +22,16 @@ public class ChangeTextureTool : TerrainTool
         strength = newStrength;
     }
     
-    public void ChangeTexture(int newTexture)
+    public void ChangeSecondaryTexture(float newTexture)
     {
-        textureNumber = newTexture;
+        secondaryTextureNumber = (int) newTexture;
     }
     public void ChangeTexture(float newTexture)
     {
-        ChangeTexture((int) newTexture);
+        textureNumber = (int)newTexture;
     }
 
-    public override void Apply(Vector3 pos, Vector3 normal, Terrain terrain, float multiplier=1f)
+    private void PaintTexture(Vector3 pos, int texture, Terrain terrain)
     {
         TerrainData terrainData = terrain.terrainData;
         int resolution = terrainData.alphamapResolution;
@@ -62,19 +63,19 @@ public class ChangeTextureTool : TerrainTool
                 float brushX = (float)(x - minX) / (maxX - minX - 1);
 
                 float curveUV = 1f - new Vector2(Mathf.Abs(brushX - 0.5f) * 2f, Mathf.Abs(brushY - 0.5f) * 2f).magnitude;
-                float newValue = Mathf.Clamp01(newAlphas[y - clampedMinY, x - clampedMinX, textureNumber] +
+                float newValue = Mathf.Clamp01(newAlphas[y - clampedMinY, x - clampedMinX, texture] +
                                                strength * Time.deltaTime * fallOff.Evaluate(curveUV));
-                newAlphas[y - clampedMinY, x - clampedMinX, textureNumber] = newValue;
+                newAlphas[y - clampedMinY, x - clampedMinX, texture] = newValue;
                 //Normalisation des autres textures
                 float alphaSum = 0f;
                 for (int i = 0; i < textureCount; i++)
                 {
-                    if (i == textureNumber) continue;
+                    if (i == texture) continue;
                     alphaSum += newAlphas[y - clampedMinY, x - clampedMinX, i];
                 }
                 for (int i = 0; i < textureCount; i++)
                 {
-                    if (i == textureNumber) continue;
+                    if (i == texture) continue;
                     newAlphas[y - clampedMinY, x - clampedMinX, i] *= (1 - newValue) / alphaSum;
                 }
             }
@@ -82,5 +83,13 @@ public class ChangeTextureTool : TerrainTool
 
         //TODO: SetHeightsDelayLOD
         terrainData.SetAlphamaps(clampedMinX, clampedMinY, newAlphas);
+    }
+    public override void Apply(Vector3 pos, Vector3 normal, Terrain terrain, float multiplier=1f)
+    {
+        PaintTexture(pos, textureNumber, terrain);
+    }
+    public override void ApplySecondary(Vector3 pos, Vector3 normal, Terrain terrain)
+    {
+        PaintTexture(pos, secondaryTextureNumber, terrain);
     }
 }
