@@ -14,6 +14,6 @@ public class GameManager : Singleton<GameManager>
     }
 
     private void Start() {
-        //tool = new AddHeightTool();
+        ChangeTool(Instance.GetComponent<AddHeightTool>());
     }
 }

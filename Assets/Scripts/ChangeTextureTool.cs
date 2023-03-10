@@ -25,6 +25,10 @@ public class ChangeTextureTool : TerrainTool
     {
         textureNumber = newTexture;
     }
+    public void ChangeTexture(float newTexture)
+    {
+        ChangeTexture((int) newTexture);
+    }
 
     public override void Apply(Vector3 pos, Vector3 normal, Terrain terrain)
     {
@@ -58,7 +62,9 @@ public class ChangeTextureTool : TerrainTool
                 float brushX = (float)(x - minX) / (maxX - minX - 1);
 
                 float curveUV = 1f - new Vector2(Mathf.Abs(brushX - 0.5f) * 2f, Mathf.Abs(brushY - 0.5f) * 2f).magnitude;
-                newAlphas[y - clampedMinY, x - clampedMinX, textureNumber] += (strength / terrainData.size.y) * Time.deltaTime * fallOff.Evaluate(curveUV);
+                float newValue = Mathf.Clamp01(newAlphas[y - clampedMinY, x - clampedMinX, textureNumber] +
+                                               strength * Time.deltaTime * fallOff.Evaluate(curveUV));
+                newAlphas[y - clampedMinY, x - clampedMinX, textureNumber] = newValue;
                 //Normalisation des autres textures
                 float alphaSum = 0f;
                 for (int i = 0; i < textureCount; i++)
@@ -69,7 +75,7 @@ public class ChangeTextureTool : TerrainTool
                 for (int i = 0; i < textureCount; i++)
                 {
                     if (i == textureNumber) continue;
-                    newAlphas[y - clampedMinY, x - clampedMinX, i] *= (1 - strength) / alphaSum;
+                    newAlphas[y - clampedMinY, x - clampedMinX, i] *= (1 - newValue) / alphaSum;
                 }
             }
         }
