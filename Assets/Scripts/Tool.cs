@@ -12,7 +12,7 @@ public abstract class TerrainTool : MonoBehaviour
 
     bool inProgress = false;
 
-    abstract public void Apply(Vector3 pos, Vector3 normal, Terrain terrainData);
+    abstract public void Apply(Vector3 pos, Vector3 normal, Terrain terrainData, float multiplier=1f);
 
     public virtual void UpdateReticle(Vector3 pos, Vector3 normal)
     {
@@ -21,7 +21,7 @@ public abstract class TerrainTool : MonoBehaviour
 
     public virtual void ApplySecondary(Vector3 pos, Vector3 normal, Terrain terrainData)
     {
-        Apply(pos, normal, terrainData);
+        Apply(pos, normal, terrainData, -1f);
     }
 
     public virtual void OnUseStart(){
