@@ -2,17 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TextureBrush : MonoBehaviour
+public class TextureBrush : Brush
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] Texture2D texture;
+
+    public override float Sample(float x, float y)
     {
-        
+        float angle = 0f;//TODO:
+        return Sample(x, y, angle);
     }
 
-    // Update is called once per frame
-    void Update()
+    public float Sample(float x, float y, float angle)
     {
-        
+        //TODO:
+        float newX = x;
+        float newY = y;
+        return texture.GetPixelBilinear(newX, newY).r;
     }
+
 }
