@@ -34,7 +34,7 @@ public class LevelTool : TerrainTool
         base.OnUseStart(hit);
         _levelHeight = hit.point.y;
     }
-    public override void Apply(Vector3 pos, Vector3 normal, Terrain terrain, float multiplier = 1f)
+    public override void Apply(Vector3 pos, Vector3 normal, Terrain terrain)
     {
         TerrainData terrainData = terrain.terrainData;
         int resolution = terrainData.heightmapResolution;
