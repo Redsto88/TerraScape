@@ -21,6 +21,10 @@ public class GameManager : Singleton<GameManager>
     {
         Instance._brush = brush;
     }
+    
+    private void Start() {
+        ChangeTool(Instance.GetComponent<AddHeightTool>());
+    }
 
     
 }

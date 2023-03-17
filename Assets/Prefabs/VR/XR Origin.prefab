@@ -910,7 +910,15 @@ MonoBehaviour:
     m_Id: af8b1b4a-6dd6-4c0a-9071-b94611cb2206
     m_Processors: 
     m_Interactions: 
-    m_SingletonActionBindings: []
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: ff6eb76f-faf9-4f7b-b667-ec6537a731de
+      m_Path: <XRController>{RightHand}/grip
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Secondary Tool
+      m_Flags: 0
     m_Flags: 0
   _rayInteractor: {fileID: 5499175229218478000}
 --- !u!1 &5499175229633976478
@@ -1084,7 +1092,6 @@ GameObject:
   - component: {fileID: 5499175230134326906}
   - component: {fileID: 5499175230134326907}
   - component: {fileID: 5499175230134326908}
-  - component: {fileID: 1111918567}
   m_Layer: 0
   m_Name: LeftHand Controller
   m_TagString: Untagged
@@ -1594,45 +1601,6 @@ MonoBehaviour:
   m_SnapThresholdDistance: 10
   m_Reticle: {fileID: 0}
   m_StopLineAtFirstRaycastHit: 1
---- !u!114 &1111918567
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5499175230134326910}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1b738292a2d01d4bbcf72191223f2dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _toolAction:
-    m_Name: Tool
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 215e7c65-bb01-4c32-9540-0287c427f2e2
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: c6d278a2-cb6e-480b-af56-12683a7c1743
-      m_Path: <XRController>{LeftHand}/trigger
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Tool
-      m_Flags: 0
-    m_Flags: 0
-  _secondaryToolAction:
-    m_Name: 
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
-  _rayInteractor: {fileID: 5499175230134326906}
 --- !u!1001 &5192535403059791346
 PrefabInstance:
   m_ObjectHideFlags: 0
