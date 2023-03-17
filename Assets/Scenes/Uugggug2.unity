@@ -434,7 +434,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _brush
       value: 
-      objectReference: {fileID: 1345094808}
+      objectReference: {fileID: 1345094809}
     - target: {fileID: 572618720279935937, guid: 2bf58789da74d55499e983e6a98aeb84,
         type: 3}
       propertyPath: m_RootOrder
