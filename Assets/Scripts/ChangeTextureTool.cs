@@ -85,7 +85,7 @@ public class ChangeTextureTool : TerrainTool
         //TODO: SetHeightsDelayLOD
         terrainData.SetAlphamaps(clampedMinX, clampedMinY, newAlphas);
     }
-    public override void Apply(Vector3 pos, Vector3 normal, Terrain terrain, float multiplier=1f)
+    public override void Apply(Vector3 pos, Vector3 normal, Terrain terrain)
     {
         PaintTexture(pos, textureNumber, terrain);
     }
