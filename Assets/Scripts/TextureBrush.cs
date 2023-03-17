@@ -8,14 +8,16 @@ public class TextureBrush : Brush
 
     public override float Sample(float x, float y)
     {
-        float angle = GameManager.Interactor.transform.rotation.y;//TODO:vérifier que c'est bien
+        float angle = - GameManager.Interactor.transform.rotation.eulerAngles.y * Mathf.Deg2Rad;//TODO:vérifier que c'est bien
         return Sample(x, y, angle);
     }
 
     public float Sample(float x, float y, float angle)
     {
-        float newX = Mathf.Clamp01(Mathf.Cos(angle) * x + Mathf.Sin(angle) * y);
-        float newY = Mathf.Clamp01(- Mathf.Sin(angle) * x + Mathf.Cos(angle) * y);
+        float centerOffsetX = x - 0.5f;
+        float centerOffsetY = y - 0.5f;
+        float newX = Mathf.Cos(angle) * centerOffsetX + Mathf.Sin(angle) * centerOffsetY + 0.5f;
+        float newY = -Mathf.Sin(angle) * centerOffsetX + Mathf.Cos(angle) * centerOffsetY + 0.5f;
         return texture.GetPixelBilinear(newX, newY).r;
     }
 
