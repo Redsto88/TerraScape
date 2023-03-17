@@ -11,6 +11,7 @@ public class GameManager : Singleton<GameManager>
 
     public static TerrainTool Tool => Instance._tool;
     public static Brush Brush => Instance._brush;
+    public static TerrainInteractor Interactor => Instance.interactor;
 
     public static void ChangeTool(TerrainTool tool)
     {
