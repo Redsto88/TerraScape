@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3321498844100046502}
   - component: {fileID: 3321498844100046503}
   - component: {fileID: 3321498844100046496}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ZonePreviewCircle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
