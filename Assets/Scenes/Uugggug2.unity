@@ -393,6 +393,19 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1345094809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1345094803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c23abd79fa9e0ae4fa227a3a58e7c97d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  texture: {fileID: 2800000, guid: cb329f8921a387744b1ff0245a0a0cca, type: 3}
 --- !u!114 &1786190751 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3393687242410725951, guid: 753c9b3065f7ce343846e073ca3583ec,
@@ -421,7 +434,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _brush
       value: 
-      objectReference: {fileID: 1345094808}
+      objectReference: {fileID: 1345094809}
     - target: {fileID: 572618720279935937, guid: 2bf58789da74d55499e983e6a98aeb84,
         type: 3}
       propertyPath: m_RootOrder
