@@ -349,8 +349,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationAngle: 45
+  leftController: {fileID: 0}
   speedText: {fileID: 1992633738}
   speed: 5
+  isMoving: 0
+  sphereMovingPoint: {fileID: 0}
+  sphereMovingPoint2: {fileID: 0}
+  CameraParent: {fileID: 0}
+  movementLimit: 100
 --- !u!1 &5499175229218478004
 GameObject:
   m_ObjectHideFlags: 0
