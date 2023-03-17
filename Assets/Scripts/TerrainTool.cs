@@ -11,6 +11,7 @@ public abstract class TerrainTool : MonoBehaviour
     public Reticle Reticle => reticle;
 
     bool inProgress = false;
+    public bool InProgress => inProgress;
 
     abstract public void Apply(Vector3 pos, Vector3 normal, Terrain terrainData);
 
@@ -24,11 +25,11 @@ public abstract class TerrainTool : MonoBehaviour
         Apply(pos, normal, terrainData);
     }
 
-    public virtual void OnUseStart(){
+    public virtual void OnUseStart(RaycastHit hit){
         inProgress = true;
     }
 
-    public virtual void OnUseEnd(){
+    public virtual void OnUseEnd(RaycastHit hit){
         inProgress = false;
     }
 
