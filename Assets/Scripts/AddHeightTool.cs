@@ -7,14 +7,19 @@ public class AddHeightTool : TerrainTool
 {
     [SerializeField] float strength = 10f;
     [SerializeField] float radius = 3f;
-    [SerializeField] AnimationCurve fallOff;
 
     [SerializeField] UnityEvent<float> radiusCallback;
     [SerializeField] UnityEvent<float> strengthCallback;
 
-    private void Start() {
+    protected override void Start() {
+        base.Start();
         radiusCallback.Invoke(radius);
         strengthCallback.Invoke(strength);
+    }
+
+    protected override void OnSelected() {
+        base.Start();
+        ChangeSize(radius);
     }
 
     public void ChangeSize(float newSize)
@@ -59,13 +64,17 @@ public class AddHeightTool : TerrainTool
             {
                 float brushX = (float)(x - minX) / (maxX - minX - 1);
 
-                float sample = GameManager.Brush.Sample(brushX, brushY);
+                float sample = Sample(brushX, brushY);
                 newHeights[y - clampedMinY, x - clampedMinX] += (strength / terrainData.size.y) * Time.deltaTime * sample * multiplier;
             }
         }
 
-        //TODO: SetHeightsDelayLOD
-        terrainData.SetHeights(clampedMinX, clampedMinY, newHeights);
+        terrainData.SetHeightsDelayLOD(clampedMinX, clampedMinY, newHeights);
+    }
+
+    public override void OnUseEnd(RaycastHit hit){
+        base.OnUseEnd(hit);
+        GameManager.MainTerrain.terrainData.SyncHeightmap();
     }
 
     public override void Apply(Vector3 pos, Vector3 normal, Terrain terrain)

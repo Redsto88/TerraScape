@@ -4,13 +4,20 @@ using UnityEngine;
 
 public class ChangeTextureTool : TerrainTool
 {
-    [SerializeField] float strength = 1f;
+    [SerializeField] float strength = 2f;
     [SerializeField] float radius = 3f;
     [SerializeField] private int textureNumber;
     [SerializeField] private int secondaryTextureNumber;
     private int textureCount = 4;
-    [SerializeField] AnimationCurve fallOff;
     
+    protected override void Start() {
+        base.Start();
+    }
+
+    protected override void OnSelected() {
+        base.Start();
+        ChangeSize(radius);
+    }
 
     public void ChangeSize(float newSize)
     {
@@ -63,9 +70,10 @@ public class ChangeTextureTool : TerrainTool
             {
                 float brushX = (float)(x - minX) / (maxX - minX - 1);
 
+                float sample = Sample(brushX, brushY);
                 float curveUV = 1f - new Vector2(Mathf.Abs(brushX - 0.5f) * 2f, Mathf.Abs(brushY - 0.5f) * 2f).magnitude;
                 float newValue = Mathf.Clamp01(newAlphas[y - clampedMinY, x - clampedMinX, texture] +
-                                               strength * Time.deltaTime * fallOff.Evaluate(curveUV));
+                                               strength * Time.deltaTime * sample);
                 newAlphas[y - clampedMinY, x - clampedMinX, texture] = newValue;
                 //Normalisation des autres textures
                 float alphaSum = 0f;
@@ -82,7 +90,6 @@ public class ChangeTextureTool : TerrainTool
             }
         }
 
-        //TODO: SetHeightsDelayLOD
         terrainData.SetAlphamaps(clampedMinX, clampedMinY, newAlphas);
     }
     public override void Apply(Vector3 pos, Vector3 normal, Terrain terrain)

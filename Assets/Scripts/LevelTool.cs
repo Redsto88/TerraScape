@@ -8,14 +8,19 @@ public class LevelTool : TerrainTool
     private float _levelHeight;
     [SerializeField] float strength = 10f;
     [SerializeField] float radius = 3f;
-    [SerializeField] AnimationCurve fallOff;
     
     [SerializeField] UnityEvent<float> radiusCallback;
     [SerializeField] UnityEvent<float> strengthCallback;
 
-    private void Start() {
+    protected override void Start() {
+        base.Start();
         radiusCallback.Invoke(radius);
         strengthCallback.Invoke(strength);
+    }
+
+    protected override void OnSelected() {
+        base.Start();
+        ChangeSize(radius);
     }
     
     public void ChangeSize(float newSize)
@@ -34,6 +39,13 @@ public class LevelTool : TerrainTool
         base.OnUseStart(hit);
         _levelHeight = hit.point.y;
     }
+
+    public override void OnUseEnd(RaycastHit hit)
+    {
+        base.OnUseEnd(hit);
+        GameManager.MainTerrain.terrainData.SyncHeightmap();
+    }
+
     public override void Apply(Vector3 pos, Vector3 normal, Terrain terrain)
     {
         TerrainData terrainData = terrain.terrainData;
@@ -65,23 +77,23 @@ public class LevelTool : TerrainTool
             {
                 float brushX = (float)(x - minX) / (maxX - minX - 1);
 
-                float curveUV = 1f - new Vector2(Mathf.Abs(brushX - 0.5f) * 2f, Mathf.Abs(brushY - 0.5f) * 2f).magnitude;
+                float sample = Sample(brushX, brushY);
                 if (newHeights[y - clampedMinY, x - clampedMinX] <= _levelHeight)
                 {
                     newHeights[y - clampedMinY, x - clampedMinX] = Mathf.Clamp(
                         newHeights[y - clampedMinY, x - clampedMinX] + (strength / terrainData.size.y) *
-                        Time.deltaTime * fallOff.Evaluate(curveUV), 0, _levelHeight/terrainData.size.y);
+                        Time.deltaTime * sample, 0, _levelHeight/terrainData.size.y);
                 }
                 else
                 {
                     newHeights[y - clampedMinY, x - clampedMinX] = Mathf.Clamp(
                             newHeights[y - clampedMinY, x - clampedMinX] - (strength / terrainData.size.y) *
-                            Time.deltaTime * fallOff.Evaluate(curveUV), _levelHeight/terrainData.size.y, terrainData.size.y);
+                            Time.deltaTime * sample, _levelHeight/terrainData.size.y, terrainData.size.y);
                 }
             }
         }
 
         //TODO: SetHeightsDelayLOD
-        terrainData.SetHeights(clampedMinX, clampedMinY, newHeights);
+        terrainData.SetHeightsDelayLOD(clampedMinX, clampedMinY, newHeights);
     }
 }
