@@ -26,7 +26,11 @@ public class TerrainInteractor : MonoBehaviour
     float uiImpulse = 0.2f;
 
     [SerializeField]
+    float uIImpulseHover = 0.1f;
+
+    [SerializeField]
     float uiImpulseDuration = 0.1f;
+    
 
     bool terrainHover = false;
 
@@ -41,7 +45,12 @@ public class TerrainInteractor : MonoBehaviour
         _secondaryToolAction.Disable();
     }
 
-    public void UIImpulse()
+    public void UIImpulseHover()
+    {
+        _rayInteractor.SendHapticImpulse(uIImpulseHover, uiImpulseDuration);
+    }
+
+    public void UIImpulsePress()
     {
         _rayInteractor.SendHapticImpulse(uiImpulse, uiImpulseDuration);
     }

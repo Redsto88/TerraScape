@@ -451,6 +451,7 @@ MonoBehaviour:
   rotationAngle: 45
   leftController: {fileID: 5499175230134326909}
   speedText: {fileID: 1992633738}
+  leftRayInteractor: {fileID: 5499175230134326906}
   speed: 5
   isMoving: 0
   sphereMovingPoint: {fileID: 0}
@@ -1056,6 +1057,11 @@ MonoBehaviour:
       m_Flags: 0
     m_Flags: 0
   _rayInteractor: {fileID: 5499175229218478000}
+  minImpulse: 0.1
+  maxImpulse: 0.4
+  uiImpulse: 0.2
+  uIImpulseHover: 0.08
+  uiImpulseDuration: 0.1
 --- !u!1 &5499175229633976478
 GameObject:
   m_ObjectHideFlags: 0
@@ -1773,6 +1779,51 @@ PrefabInstance:
       propertyPath: m_Colors.m_HighlightedColor.r
       value: 0.4
       objectReference: {fileID: 0}
+    - target: {fileID: 315086825851461763, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 315086825851461763, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 315086825851461763, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1091519647}
+    - target: {fileID: 315086825851461763, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 315086825851461763, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: UIImpulsePress
+      objectReference: {fileID: 0}
+    - target: {fileID: 315086825851461763, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: ChangeBrush
+      objectReference: {fileID: 0}
+    - target: {fileID: 315086825851461763, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: TerrainInteractor, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 315086825851461763, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: TerrainTool, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 315086825851461763, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 424274960734861461, guid: 129b25d7f17a16245830ecc146ebe2ff,
         type: 3}
       propertyPath: m_Name
@@ -1815,13 +1866,48 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1122729981829519080, guid: 129b25d7f17a16245830ecc146ebe2ff,
         type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1122729981829519080, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1122729981829519080, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1091519647}
+    - target: {fileID: 1122729981829519080, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1122729981829519080, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ChangeStrength
       objectReference: {fileID: 0}
     - target: {fileID: 1122729981829519080, guid: 129b25d7f17a16245830ecc146ebe2ff,
         type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: UIImpulsePress
+      objectReference: {fileID: 0}
+    - target: {fileID: 1122729981829519080, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: AddHeightTool, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1122729981829519080, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: TerrainInteractor, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1122729981829519080, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 1394671479190719205, guid: 129b25d7f17a16245830ecc146ebe2ff,
         type: 3}
@@ -1960,13 +2046,48 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2840431078047696911, guid: 129b25d7f17a16245830ecc146ebe2ff,
         type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2840431078047696911, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2840431078047696911, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1091519647}
+    - target: {fileID: 2840431078047696911, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2840431078047696911, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ChangeSize
       objectReference: {fileID: 0}
     - target: {fileID: 2840431078047696911, guid: 129b25d7f17a16245830ecc146ebe2ff,
         type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: UIImpulsePress
+      objectReference: {fileID: 0}
+    - target: {fileID: 2840431078047696911, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: ChangeTextureTool, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2840431078047696911, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: TerrainInteractor, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2840431078047696911, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3143530938773837476, guid: 129b25d7f17a16245830ecc146ebe2ff,
         type: 3}
@@ -2000,13 +2121,48 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3143530938773837476, guid: 129b25d7f17a16245830ecc146ebe2ff,
         type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3143530938773837476, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3143530938773837476, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1091519647}
+    - target: {fileID: 3143530938773837476, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3143530938773837476, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ChangeStrength
       objectReference: {fileID: 0}
     - target: {fileID: 3143530938773837476, guid: 129b25d7f17a16245830ecc146ebe2ff,
         type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: UIImpulsePress
+      objectReference: {fileID: 0}
+    - target: {fileID: 3143530938773837476, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: LevelTool, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3143530938773837476, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: TerrainInteractor, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3143530938773837476, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3348281440160122033, guid: 129b25d7f17a16245830ecc146ebe2ff,
         type: 3}
@@ -2102,7 +2258,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 5499175229218478004}
+      objectReference: {fileID: 1091519647}
     - target: {fileID: 3683748712578331694, guid: 129b25d7f17a16245830ecc146ebe2ff,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -2130,6 +2286,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3683748712578331694, guid: 129b25d7f17a16245830ecc146ebe2ff,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: UIImpulsePress
+      objectReference: {fileID: 0}
+    - target: {fileID: 3683748712578331694, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: GameManager, Assembly-CSharp
       objectReference: {fileID: 0}
@@ -2141,7 +2302,7 @@ PrefabInstance:
     - target: {fileID: 3683748712578331694, guid: 129b25d7f17a16245830ecc146ebe2ff,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: MenuManager, Assembly-CSharp
+      value: TerrainInteractor, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3683748712578331694, guid: 129b25d7f17a16245830ecc146ebe2ff,
         type: 3}
@@ -2151,6 +2312,11 @@ PrefabInstance:
     - target: {fileID: 3683748712578331694, guid: 129b25d7f17a16245830ecc146ebe2ff,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3683748712578331694, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3722217812254732668, guid: 129b25d7f17a16245830ecc146ebe2ff,
@@ -2235,13 +2401,48 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4945010982525399263, guid: 129b25d7f17a16245830ecc146ebe2ff,
         type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4945010982525399263, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4945010982525399263, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1091519647}
+    - target: {fileID: 4945010982525399263, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4945010982525399263, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ChangeStrength
       objectReference: {fileID: 0}
     - target: {fileID: 4945010982525399263, guid: 129b25d7f17a16245830ecc146ebe2ff,
         type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: UIImpulsePress
+      objectReference: {fileID: 0}
+    - target: {fileID: 4945010982525399263, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: ChangeTextureTool, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4945010982525399263, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: TerrainInteractor, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4945010982525399263, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5192535403316476666, guid: 129b25d7f17a16245830ecc146ebe2ff,
         type: 3}
@@ -2275,13 +2476,48 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5192535403316476666, guid: 129b25d7f17a16245830ecc146ebe2ff,
         type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5192535403316476666, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5192535403316476666, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1091519647}
+    - target: {fileID: 5192535403316476666, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5192535403316476666, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ChangeSize
       objectReference: {fileID: 0}
     - target: {fileID: 5192535403316476666, guid: 129b25d7f17a16245830ecc146ebe2ff,
         type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: UIImpulsePress
+      objectReference: {fileID: 0}
+    - target: {fileID: 5192535403316476666, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: AddHeightTool, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5192535403316476666, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: TerrainInteractor, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5192535403316476666, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5192535403976561962, guid: 129b25d7f17a16245830ecc146ebe2ff,
         type: 3}
@@ -2540,13 +2776,48 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6747751236502245297, guid: 129b25d7f17a16245830ecc146ebe2ff,
         type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6747751236502245297, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6747751236502245297, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1091519647}
+    - target: {fileID: 6747751236502245297, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6747751236502245297, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ChangeSize
       objectReference: {fileID: 0}
     - target: {fileID: 6747751236502245297, guid: 129b25d7f17a16245830ecc146ebe2ff,
         type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: UIImpulsePress
+      objectReference: {fileID: 0}
+    - target: {fileID: 6747751236502245297, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: LevelTool, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6747751236502245297, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: TerrainInteractor, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6747751236502245297, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6778598185669607961, guid: 129b25d7f17a16245830ecc146ebe2ff,
         type: 3}
@@ -2601,8 +2872,18 @@ PrefabInstance:
     - target: {fileID: 6889894245400939938, guid: 129b25d7f17a16245830ecc146ebe2ff,
         type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 6889894245400939938, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6889894245400939938, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1091519647}
     - target: {fileID: 6889894245400939938, guid: 129b25d7f17a16245830ecc146ebe2ff,
         type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
@@ -2610,12 +2891,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6889894245400939938, guid: 129b25d7f17a16245830ecc146ebe2ff,
         type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6889894245400939938, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: UIImpulsePress
+      objectReference: {fileID: 0}
+    - target: {fileID: 6889894245400939938, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
       value: ChangeSecondaryTexture
       objectReference: {fileID: 0}
     - target: {fileID: 6889894245400939938, guid: 129b25d7f17a16245830ecc146ebe2ff,
         type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: TerrainInteractor, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6889894245400939938, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
       value: ChangeTextureTool, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6889894245400939938, guid: 129b25d7f17a16245830ecc146ebe2ff,
@@ -2623,6 +2919,11 @@ PrefabInstance:
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 6889894245400939938, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7047315983004825847, guid: 129b25d7f17a16245830ecc146ebe2ff,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -2732,7 +3033,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 5499175229218478004}
+      objectReference: {fileID: 1091519647}
     - target: {fileID: 7659888566747926113, guid: 129b25d7f17a16245830ecc146ebe2ff,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -2760,6 +3061,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7659888566747926113, guid: 129b25d7f17a16245830ecc146ebe2ff,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: UIImpulsePress
+      objectReference: {fileID: 0}
+    - target: {fileID: 7659888566747926113, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: GameManager, Assembly-CSharp
       objectReference: {fileID: 0}
@@ -2771,7 +3077,7 @@ PrefabInstance:
     - target: {fileID: 7659888566747926113, guid: 129b25d7f17a16245830ecc146ebe2ff,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: MenuManager, Assembly-CSharp
+      value: TerrainInteractor, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7659888566747926113, guid: 129b25d7f17a16245830ecc146ebe2ff,
         type: 3}
@@ -2781,6 +3087,11 @@ PrefabInstance:
     - target: {fileID: 7659888566747926113, guid: 129b25d7f17a16245830ecc146ebe2ff,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7659888566747926113, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7769923055837802703, guid: 129b25d7f17a16245830ecc146ebe2ff,
@@ -2842,7 +3153,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 5499175229218478004}
+      objectReference: {fileID: 1091519647}
     - target: {fileID: 7769923055837802703, guid: 129b25d7f17a16245830ecc146ebe2ff,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -2870,6 +3181,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7769923055837802703, guid: 129b25d7f17a16245830ecc146ebe2ff,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: UIImpulsePress
+      objectReference: {fileID: 0}
+    - target: {fileID: 7769923055837802703, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: GameManager, Assembly-CSharp
       objectReference: {fileID: 0}
@@ -2881,7 +3197,7 @@ PrefabInstance:
     - target: {fileID: 7769923055837802703, guid: 129b25d7f17a16245830ecc146ebe2ff,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: MenuManager, Assembly-CSharp
+      value: TerrainInteractor, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7769923055837802703, guid: 129b25d7f17a16245830ecc146ebe2ff,
         type: 3}
@@ -2891,6 +3207,11 @@ PrefabInstance:
     - target: {fileID: 7769923055837802703, guid: 129b25d7f17a16245830ecc146ebe2ff,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7769923055837802703, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7873657148097631071, guid: 129b25d7f17a16245830ecc146ebe2ff,
@@ -2923,6 +3244,51 @@ PrefabInstance:
       propertyPath: m_Colors.m_HighlightedColor.r
       value: 0.4
       objectReference: {fileID: 0}
+    - target: {fileID: 7873657148097631071, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7873657148097631071, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7873657148097631071, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1091519647}
+    - target: {fileID: 7873657148097631071, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7873657148097631071, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: UIImpulsePress
+      objectReference: {fileID: 0}
+    - target: {fileID: 7873657148097631071, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: ChangeBrush
+      objectReference: {fileID: 0}
+    - target: {fileID: 7873657148097631071, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: TerrainInteractor, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7873657148097631071, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: TerrainTool, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7873657148097631071, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7873657148189903666, guid: 129b25d7f17a16245830ecc146ebe2ff,
         type: 3}
       propertyPath: m_Colors.m_PressedColor.b
@@ -2952,6 +3318,51 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Colors.m_HighlightedColor.r
       value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7873657148189903666, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7873657148189903666, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7873657148189903666, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1091519647}
+    - target: {fileID: 7873657148189903666, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7873657148189903666, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: UIImpulsePress
+      objectReference: {fileID: 0}
+    - target: {fileID: 7873657148189903666, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: ChangeBrush
+      objectReference: {fileID: 0}
+    - target: {fileID: 7873657148189903666, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: TerrainInteractor, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7873657148189903666, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: TerrainTool, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7873657148189903666, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8180856342441705328, guid: 129b25d7f17a16245830ecc146ebe2ff,
         type: 3}
@@ -3002,6 +3413,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Colors.m_HighlightedColor.r
       value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8358359096007584658, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8358359096007584658, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8358359096007584658, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1091519647}
+    - target: {fileID: 8358359096007584658, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 7649638027592894955}
+    - target: {fileID: 8358359096007584658, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8358359096007584658, guid: 129b25d7f17a16245830ecc146ebe2ff,
         type: 3}
@@ -3010,8 +3446,33 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8358359096007584658, guid: 129b25d7f17a16245830ecc146ebe2ff,
         type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: UIImpulsePress
+      objectReference: {fileID: 0}
+    - target: {fileID: 8358359096007584658, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: ChangeImage
+      objectReference: {fileID: 0}
+    - target: {fileID: 8358359096007584658, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: ChangeTextureTool, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8358359096007584658, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: TerrainInteractor, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8358359096007584658, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: TexturePreview, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8358359096007584658, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 9178502004646593391, guid: 129b25d7f17a16245830ecc146ebe2ff,
         type: 3}
@@ -3041,6 +3502,41 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 5192535403059791346}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1376282636687846606 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6563467266209737020, guid: 129b25d7f17a16245830ecc146ebe2ff,
+    type: 3}
+  m_PrefabInstance: {fileID: 5192535403059791346}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &331370186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1376282636687846606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1091519647}
+          m_TargetAssemblyTypeName: TerrainInteractor, Assembly-CSharp
+          m_MethodName: UIImpulseHover
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &5499175229090304420 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 315086824647873622, guid: 129b25d7f17a16245830ecc146ebe2ff,
@@ -3053,3 +3549,85 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1aaa8e7fad7f514c8c6074f24a04c4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &5615079044727274855 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 424274960734861461, guid: 129b25d7f17a16245830ecc146ebe2ff,
+    type: 3}
+  m_PrefabInstance: {fileID: 5192535403059791346}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &452532650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5615079044727274855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1091519647}
+          m_TargetAssemblyTypeName: TerrainInteractor, Assembly-CSharp
+          m_MethodName: UIImpulseHover
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &7649638027592894955 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2461056881233906713, guid: 129b25d7f17a16245830ecc146ebe2ff,
+    type: 3}
+  m_PrefabInstance: {fileID: 5192535403059791346}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8272b065f810d7643beb62e748d559dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &8707346333524380489 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3519882153137639099, guid: 129b25d7f17a16245830ecc146ebe2ff,
+    type: 3}
+  m_PrefabInstance: {fileID: 5192535403059791346}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1901390442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8707346333524380489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1091519647}
+          m_TargetAssemblyTypeName: TerrainInteractor, Assembly-CSharp
+          m_MethodName: UIImpulseHover
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
