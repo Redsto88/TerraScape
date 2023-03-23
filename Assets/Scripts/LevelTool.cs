@@ -14,11 +14,12 @@ public class LevelTool : TerrainTool
 
     protected override void Start() {
         base.Start();
+        reticle.SetSize(radius);
         radiusCallback.Invoke(radius);
         strengthCallback.Invoke(strength);
     }
 
-    protected override void OnSelected() {
+    public override void OnSelected() {
         base.Start();
         ChangeSize(radius);
     }

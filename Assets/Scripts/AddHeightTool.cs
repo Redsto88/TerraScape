@@ -17,9 +17,10 @@ public class AddHeightTool : TerrainTool
         strengthCallback.Invoke(strength);
     }
 
-    protected override void OnSelected() {
+    public override void OnSelected() {
         base.Start();
         ChangeSize(radius);
+        radiusCallback.Invoke(radius);
     }
 
     public void ChangeSize(float newSize)

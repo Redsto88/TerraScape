@@ -770,9 +770,9 @@ MonoBehaviour:
   m_PlayHapticsOnSelectCanceled: 0
   m_HapticSelectCancelIntensity: 0
   m_HapticSelectCancelDuration: 0
-  m_PlayHapticsOnHoverEntered: 0
-  m_HapticHoverEnterIntensity: 0
-  m_HapticHoverEnterDuration: 0
+  m_PlayHapticsOnHoverEntered: 1
+  m_HapticHoverEnterIntensity: 0.1
+  m_HapticHoverEnterDuration: 0.1
   m_PlayHapticsOnHoverExited: 0
   m_HapticHoverExitIntensity: 0
   m_HapticHoverExitDuration: 0
@@ -1868,6 +1868,26 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2840431078047696911, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeSize
+      objectReference: {fileID: 0}
+    - target: {fileID: 2840431078047696911, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ChangeTextureTool, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3143530938773837476, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeStrength
+      objectReference: {fileID: 0}
+    - target: {fileID: 3143530938773837476, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: LevelTool, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 3348281440160122033, guid: 129b25d7f17a16245830ecc146ebe2ff,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -2002,6 +2022,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4945010982525399263, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_MaxValue
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4945010982525399263, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_MinValue
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4945010982525399263, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeStrength
+      objectReference: {fileID: 0}
+    - target: {fileID: 4945010982525399263, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ChangeTextureTool, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5192535403316476666, guid: 129b25d7f17a16245830ecc146ebe2ff,
         type: 3}
@@ -2237,6 +2277,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6747751236502245297, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeSize
+      objectReference: {fileID: 0}
+    - target: {fileID: 6747751236502245297, guid: 129b25d7f17a16245830ecc146ebe2ff,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: LevelTool, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6778598185669607961, guid: 129b25d7f17a16245830ecc146ebe2ff,
         type: 3}

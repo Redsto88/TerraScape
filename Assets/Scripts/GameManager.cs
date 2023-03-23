@@ -17,6 +17,7 @@ public class GameManager : Singleton<GameManager>
     public static void ChangeTool(TerrainTool tool)
     {
         Instance._tool = tool;
+        tool.OnSelected();
     }
     
     private void Start() {

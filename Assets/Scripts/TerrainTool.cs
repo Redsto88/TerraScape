@@ -24,7 +24,7 @@ public abstract class TerrainTool : MonoBehaviour
         brushChangeCallback.Invoke(0);
     }
 
-    protected virtual void OnSelected()
+    public virtual void OnSelected()
     {
         
     }

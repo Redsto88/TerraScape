@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ChangeTextureTool : TerrainTool
 {
@@ -9,14 +10,18 @@ public class ChangeTextureTool : TerrainTool
     [SerializeField] private int textureNumber;
     [SerializeField] private int secondaryTextureNumber;
     private int textureCount = 4;
+
+    [SerializeField] UnityEvent<float> radiusCallback;
+    [SerializeField] UnityEvent<float> strengthCallback;
     
     protected override void Start() {
         base.Start();
     }
 
-    protected override void OnSelected() {
+    public override void OnSelected() {
         base.Start();
         ChangeSize(radius);
+        radiusCallback.Invoke(radius);
     }
 
     public void ChangeSize(float newSize)
