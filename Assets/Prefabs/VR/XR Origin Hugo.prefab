@@ -1562,7 +1562,6 @@ MonoBehaviour:
   isMoving: 0
   sphereMovingPoint: {fileID: 0}
   sphereMovingPoint2: {fileID: 0}
-  CameraParent: {fileID: 4078543604995352189}
   movementLimit: 100
 --- !u!54 &867525183
 Rigidbody:
