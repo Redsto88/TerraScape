@@ -24,9 +24,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private GameObject sphereMovingPoint;
     [SerializeField] private GameObject sphereMovingPoint2;
 
-    [SerializeField] Transform CameraParent;
-    float cameraParentStartRot;
-
     public float movementLimit = 100f;
 
     private Rigidbody rb;
@@ -84,7 +81,7 @@ public class PlayerMovement : MonoBehaviour
                 Ray ray = new Ray(leftController.position, leftController.forward);
                 //si le raycast touche un objet avec le tag "Terrain"
                 if(Physics.Raycast(ray, out hit, 1000f)){
-                    
+                    Debug.DrawRay(leftController.position, leftController.forward * 1000f, Color.green, 1f);
                     print(hit.collider.gameObject.tag);
                     if(hit.collider.gameObject.tag == "Terrain"){
                         isMoving = true;
@@ -94,10 +91,12 @@ public class PlayerMovement : MonoBehaviour
                         heightPosition = transform.position.y;
                         initialDistance = Vector3.Distance(transform.position, hit.point);
                         sphereMovingPoint.SetActive(true);
-                        cameraParentStartRot = CameraParent.transform.rotation.eulerAngles.y;
                         sphereMovingPoint2.SetActive(true);
                         sphereMovingPoint2.transform.position = leftControllerStartPos + transform.position;
                     }
+                }
+                else{
+                    Debug.DrawRay(leftController.position, leftController.forward * 1000f, Color.red, 1f);
                 }
                 
             }
@@ -105,8 +104,6 @@ public class PlayerMovement : MonoBehaviour
             if(!Input.GetButton("XRI_Left_TriggerButton") && isMoving){
                 isMoving = false;
                 sphereMovingPoint.SetActive(false);
-                //transform.rotation = CameraParent.transform.rotation;
-                // CameraParent.transform.rotation = Quaternion.Euler(0, 0, 0);
                 sphereMovingPoint2.SetActive(false);
                 
 
@@ -144,17 +141,10 @@ public class PlayerMovement : MonoBehaviour
                 newPosition.y = Mathf.Clamp(newPosition.y, 0, movementLimit);
                 newPosition.z = Mathf.Clamp(newPosition.z, -movementLimit, movementLimit);
                 
-                //rotate the camera to move in the direction of the point
-                // CameraParent.LookAt(new Vector3(sphereMovingPoint.transform.position.x, transform.position.y, sphereMovingPoint.transform.position.z));
-                // CameraParent.Rotate(0, -cameraParentStartRot, 0);
 
                 
                 transform.position = newPosition + (transform.position - leftController.transform.position);
             
-            }
-
-            if(!isMoving){
-                CameraParent.transform.localRotation = Quaternion.Euler(0, 0, 0);
             }
 
 

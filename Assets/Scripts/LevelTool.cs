@@ -78,7 +78,7 @@ public class LevelTool : TerrainTool
                 float brushX = (float)(x - minX) / (maxX - minX - 1);
 
                 float sample = Sample(brushX, brushY);
-                if (newHeights[y - clampedMinY, x - clampedMinX] <= _levelHeight)
+                if (newHeights[y - clampedMinY, x - clampedMinX] <= _levelHeight/terrainData.size.y)
                 {
                     newHeights[y - clampedMinY, x - clampedMinX] = Mathf.Clamp(
                         newHeights[y - clampedMinY, x - clampedMinX] + (strength / terrainData.size.y) *
