@@ -3496,12 +3496,82 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 129b25d7f17a16245830ecc146ebe2ff, type: 3}
+--- !u!1 &827703046 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5192535403316476660, guid: 129b25d7f17a16245830ecc146ebe2ff,
+    type: 3}
+  m_PrefabInstance: {fileID: 5192535403059791346}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1573138239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 827703046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1091519647}
+          m_TargetAssemblyTypeName: TerrainInteractor, Assembly-CSharp
+          m_MethodName: UIImpulseHover
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!224 &2066571073 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5192535404488268467, guid: 129b25d7f17a16245830ecc146ebe2ff,
     type: 3}
   m_PrefabInstance: {fileID: 5192535403059791346}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &252041963599319810 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5436119235351844592, guid: 129b25d7f17a16245830ecc146ebe2ff,
+    type: 3}
+  m_PrefabInstance: {fileID: 5192535403059791346}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1477286860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 252041963599319810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1091519647}
+          m_TargetAssemblyTypeName: TerrainInteractor, Assembly-CSharp
+          m_MethodName: UIImpulseHover
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1376282636687846606 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6563467266209737020, guid: 129b25d7f17a16245830ecc146ebe2ff,
@@ -3537,6 +3607,146 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!1 &1738970002522443654 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5777422816058919540, guid: 129b25d7f17a16245830ecc146ebe2ff,
+    type: 3}
+  m_PrefabInstance: {fileID: 5192535403059791346}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &313237782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1738970002522443654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1091519647}
+          m_TargetAssemblyTypeName: TerrainInteractor, Assembly-CSharp
+          m_MethodName: UIImpulseHover
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!1 &2687327388799850159 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7873657148097631069, guid: 129b25d7f17a16245830ecc146ebe2ff,
+    type: 3}
+  m_PrefabInstance: {fileID: 5192535403059791346}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2136945492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2687327388799850159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1091519647}
+          m_TargetAssemblyTypeName: TerrainInteractor, Assembly-CSharp
+          m_MethodName: UIImpulseHover
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!1 &2687327388959231682 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7873657148189903664, guid: 129b25d7f17a16245830ecc146ebe2ff,
+    type: 3}
+  m_PrefabInstance: {fileID: 5192535403059791346}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &810468936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2687327388959231682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1091519647}
+          m_TargetAssemblyTypeName: TerrainInteractor, Assembly-CSharp
+          m_MethodName: UIImpulseHover
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!1 &2758917879646039870 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7946093850043509452, guid: 129b25d7f17a16245830ecc146ebe2ff,
+    type: 3}
+  m_PrefabInstance: {fileID: 5192535403059791346}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1105369660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2758917879646039870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1091519647}
+          m_TargetAssemblyTypeName: TerrainInteractor, Assembly-CSharp
+          m_MethodName: UIImpulseHover
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &5499175229090304420 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 315086824647873622, guid: 129b25d7f17a16245830ecc146ebe2ff,
@@ -3549,6 +3759,76 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1aaa8e7fad7f514c8c6074f24a04c4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &5499175230293992819 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 315086825851461761, guid: 129b25d7f17a16245830ecc146ebe2ff,
+    type: 3}
+  m_PrefabInstance: {fileID: 5192535403059791346}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1683487682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5499175230293992819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1091519647}
+          m_TargetAssemblyTypeName: TerrainInteractor, Assembly-CSharp
+          m_MethodName: UIImpulseHover
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!1 &5555617561151543235 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 366502189781799473, guid: 129b25d7f17a16245830ecc146ebe2ff,
+    type: 3}
+  m_PrefabInstance: {fileID: 5192535403059791346}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1105369658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5555617561151543235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1091519647}
+          m_TargetAssemblyTypeName: TerrainInteractor, Assembly-CSharp
+          m_MethodName: UIImpulseHover
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &5615079044727274855 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 424274960734861461, guid: 129b25d7f17a16245830ecc146ebe2ff,
@@ -3562,6 +3842,76 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5615079044727274855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1091519647}
+          m_TargetAssemblyTypeName: TerrainInteractor, Assembly-CSharp
+          m_MethodName: UIImpulseHover
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!1 &5991679773955610469 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1957146581329285783, guid: 129b25d7f17a16245830ecc146ebe2ff,
+    type: 3}
+  m_PrefabInstance: {fileID: 5192535403059791346}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1182631151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5991679773955610469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1091519647}
+          m_TargetAssemblyTypeName: TerrainInteractor, Assembly-CSharp
+          m_MethodName: UIImpulseHover
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!1 &7453791028173821922 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3422375089189917200, guid: 129b25d7f17a16245830ecc146ebe2ff,
+    type: 3}
+  m_PrefabInstance: {fileID: 5192535403059791346}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &418040608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7453791028173821922}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
@@ -3609,6 +3959,41 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8707346333524380489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1091519647}
+          m_TargetAssemblyTypeName: TerrainInteractor, Assembly-CSharp
+          m_MethodName: UIImpulseHover
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!1 &8758546611279316113 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3567709404096987491, guid: 129b25d7f17a16245830ecc146ebe2ff,
+    type: 3}
+  m_PrefabInstance: {fileID: 5192535403059791346}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1105369659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8758546611279316113}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
