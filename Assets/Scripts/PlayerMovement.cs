@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform leftController;
 
     [SerializeField] private TextMeshProUGUI speedText;
+
+    [SerializeField] XRRayInteractor leftRayInteractor;
     
     
     public float speed = 5f;
@@ -93,6 +96,8 @@ public class PlayerMovement : MonoBehaviour
                         sphereMovingPoint.SetActive(true);
                         sphereMovingPoint2.SetActive(true);
                         sphereMovingPoint2.transform.position = leftControllerStartPos + transform.position;
+
+                        leftRayInteractor.SendHapticImpulse(0.2f, 0.15f);
                     }
                 }
                 else{

@@ -5,14 +5,9 @@ using UnityEngine.Events;
 
 public class ChangeTextureTool : TerrainTool
 {
-    [SerializeField] float strength = 2f;
-    [SerializeField] float radius = 3f;
     [SerializeField] private int textureNumber;
     [SerializeField] private int secondaryTextureNumber;
     private int textureCount = 4;
-
-    [SerializeField] UnityEvent<float> radiusCallback;
-    [SerializeField] UnityEvent<float> strengthCallback;
     
     protected override void Start() {
         base.Start();

@@ -5,11 +5,6 @@ using UnityEngine.Events;
 
 public class AddHeightTool : TerrainTool
 {
-    [SerializeField] float strength = 10f;
-    [SerializeField] float radius = 3f;
-
-    [SerializeField] UnityEvent<float> radiusCallback;
-    [SerializeField] UnityEvent<float> strengthCallback;
 
     protected override void Start() {
         base.Start();

@@ -6,11 +6,6 @@ using UnityEngine.Events;
 public class LevelTool : TerrainTool
 {
     private float _levelHeight;
-    [SerializeField] float strength = 10f;
-    [SerializeField] float radius = 3f;
-    
-    [SerializeField] UnityEvent<float> radiusCallback;
-    [SerializeField] UnityEvent<float> strengthCallback;
 
     protected override void Start() {
         base.Start();

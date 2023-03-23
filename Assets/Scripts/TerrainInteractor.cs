@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.Events;
 
 public class TerrainInteractor : MonoBehaviour
 {
@@ -15,6 +16,18 @@ public class TerrainInteractor : MonoBehaviour
     [SerializeField]
     XRRayInteractor _rayInteractor;
 
+    [SerializeField]
+    float minImpulse = 0.1f;
+
+    [SerializeField]
+    float maxImpulse = 0.3f;
+
+    [SerializeField]
+    float uiImpulse = 0.2f;
+
+    [SerializeField]
+    float uiImpulseDuration = 0.1f;
+
     bool terrainHover = false;
 
 
@@ -26,6 +39,16 @@ public class TerrainInteractor : MonoBehaviour
     private void OnDisable() {
         _toolAction.Disable();
         _secondaryToolAction.Disable();
+    }
+
+    public void UIImpulse()
+    {
+        _rayInteractor.SendHapticImpulse(uiImpulse, uiImpulseDuration);
+    }
+
+    private void ToolImpulse()
+    {
+        _rayInteractor.SendHapticImpulse(Mathf.Lerp(minImpulse, maxImpulse, GameManager.Tool.StrengthSlider.normalizedValue), 0.02f);
     }
 
     private void Update() {
@@ -70,10 +93,12 @@ public class TerrainInteractor : MonoBehaviour
         if (!_secondaryToolAction.IsPressed())
         {
             GameManager.Tool.Apply(raycastHit.point, raycastHit.normal, terrain);
+            ToolImpulse();
         }
         else
         {
             GameManager.Tool.ApplySecondary(raycastHit.point, raycastHit.normal, terrain);
+            ToolImpulse();
         }
             
     }

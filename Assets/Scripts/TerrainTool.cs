@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public abstract class TerrainTool : MonoBehaviour
 {
@@ -11,11 +12,24 @@ public abstract class TerrainTool : MonoBehaviour
     [SerializeField] protected Reticle reticle;
     public Reticle Reticle => reticle;
 
+    [SerializeField] Slider strengthSlider;
+    [SerializeField] Slider sizeSlider;
+
+    [SerializeField] protected float strength = 10f;
+    [SerializeField] protected float radius = 3f;
+
+    [SerializeField] protected UnityEvent<float> radiusCallback;
+    [SerializeField] protected UnityEvent<float> strengthCallback;
+
+
     Texture2D brush;
     public Texture2D Brush => brush;
 
     bool inProgress = false;
     public bool InProgress => inProgress;
+
+    public Slider StrengthSlider { get => strengthSlider; set => strengthSlider = value; }
+    public Slider SizeSlider { get => sizeSlider; set => sizeSlider = value; }
 
     [SerializeField] UnityEvent<float> brushChangeCallback;
 
