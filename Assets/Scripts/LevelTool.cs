@@ -66,7 +66,7 @@ public class LevelTool : TerrainTool
                 float brushX = (float)(x - minX) / (maxX - minX - 1);
 
                 float curveUV = 1f - new Vector2(Mathf.Abs(brushX - 0.5f) * 2f, Mathf.Abs(brushY - 0.5f) * 2f).magnitude;
-                if (newHeights[y - clampedMinY, x - clampedMinX] <= _levelHeight)
+                if (newHeights[y - clampedMinY, x - clampedMinX] <= _levelHeight/terrainData.size.y)
                 {
                     newHeights[y - clampedMinY, x - clampedMinX] = Mathf.Clamp(
                         newHeights[y - clampedMinY, x - clampedMinX] + (strength / terrainData.size.y) *
