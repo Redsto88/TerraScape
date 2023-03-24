@@ -143,7 +143,7 @@ public class PlayerMovement : MonoBehaviour
                 
 
                 newPosition.x = Mathf.Clamp(newPosition.x, -movementLimit, movementLimit);
-                newPosition.y = Mathf.Clamp(newPosition.y, 0, movementLimit);
+                newPosition.y = Mathf.Clamp(newPosition.y, 0, 1000f);
                 newPosition.z = Mathf.Clamp(newPosition.z, -movementLimit, movementLimit);
                 
 
@@ -205,6 +205,16 @@ public class PlayerMovement : MonoBehaviour
         }
         if(Mathf.Abs(HorizontalRight)<0.7f && isRotating){
             isRotating = false;
+        }
+
+        //tp si le joueur est tombé
+        if(transform.position.y < -100){
+            //on raycast pour trouver le point de destination
+            RaycastHit hit;
+            if (Physics.Raycast(new Vector3(0,1000,0), Vector3.down, out hit, Mathf.Infinity))
+            {
+                transform.position = hit.point;
+            }
         }
         
     }
