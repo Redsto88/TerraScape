@@ -584,45 +584,10 @@ PrefabInstance:
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1946115722}
-    - target: {fileID: 1521307864, guid: bfe8fd53a659aad438ead1fa8983e482, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1521307864, guid: bfe8fd53a659aad438ead1fa8983e482, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1521307864, guid: bfe8fd53a659aad438ead1fa8983e482, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1682125069, guid: bfe8fd53a659aad438ead1fa8983e482, type: 3}
       propertyPath: sphereMovingPoint
       value: 
       objectReference: {fileID: 1893164478}
-    - target: {fileID: 1862243141, guid: bfe8fd53a659aad438ead1fa8983e482, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1862243141, guid: bfe8fd53a659aad438ead1fa8983e482, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 201671468810832084, guid: bfe8fd53a659aad438ead1fa8983e482,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 201671468810832084, guid: bfe8fd53a659aad438ead1fa8983e482,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 201671468810832084, guid: bfe8fd53a659aad438ead1fa8983e482,
-        type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1698496149748795472, guid: bfe8fd53a659aad438ead1fa8983e482,
         type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
@@ -717,16 +682,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: XR Origin
-      objectReference: {fileID: 0}
-    - target: {fileID: 6198887665946205409, guid: bfe8fd53a659aad438ead1fa8983e482,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6198887665946205409, guid: bfe8fd53a659aad438ead1fa8983e482,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8867828046351856092, guid: bfe8fd53a659aad438ead1fa8983e482,
         type: 3}
