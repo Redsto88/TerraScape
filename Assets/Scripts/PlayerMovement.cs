@@ -25,7 +25,6 @@ public class PlayerMovement : MonoBehaviour
     private float initialDistance;
     private Vector3 leftControllerStartPos;
     [SerializeField] private GameObject sphereMovingPoint;
-    [SerializeField] private GameObject sphereMovingPoint2;
 
     public float movementLimit = 100f;
 
@@ -94,8 +93,6 @@ public class PlayerMovement : MonoBehaviour
                         heightPosition = transform.position.y;
                         initialDistance = Vector3.Distance(transform.position, hit.point);
                         sphereMovingPoint.SetActive(true);
-                        sphereMovingPoint2.SetActive(true);
-                        sphereMovingPoint2.transform.position = leftControllerStartPos + transform.position;
 
                         leftRayInteractor.SendHapticImpulse(0.2f, 0.15f);
                     }
@@ -109,7 +106,6 @@ public class PlayerMovement : MonoBehaviour
             if(!Input.GetButton("XRI_Left_TriggerButton") && isMoving){
                 isMoving = false;
                 sphereMovingPoint.SetActive(false);
-                sphereMovingPoint2.SetActive(false);
                 
 
             }
