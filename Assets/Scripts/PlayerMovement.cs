@@ -208,12 +208,12 @@ public class PlayerMovement : MonoBehaviour
         }
 
         //tp si le joueur est tombé
-        if(transform.position.y < -100){
+        if(transform.position.y < -5){
             //on raycast pour trouver le point de destination
             RaycastHit hit;
             if (Physics.Raycast(new Vector3(0,1000,0), Vector3.down, out hit, Mathf.Infinity))
             {
-                transform.position = hit.point;
+                transform.position = hit.point + Vector3.up * 2f;
             }
         }
         
