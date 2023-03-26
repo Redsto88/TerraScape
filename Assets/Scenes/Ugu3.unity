@@ -204,6 +204,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: UglyCylinderReticle
       objectReference: {fileID: 0}
+    - target: {fileID: 8980234444415980467, guid: 24e44db8d26a04f4788bd902c5009022,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24e44db8d26a04f4788bd902c5009022, type: 3}
 --- !u!114 &42341695 stripped

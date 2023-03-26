@@ -17,4 +17,9 @@ public class MenuManager : MonoBehaviour
     {
         ChangeMenu(GameManager.Tool.ParamMenu);
     }
+
+    public void ToggleVisibility(GameObject obj)
+    {
+        obj.SetActive(!obj.activeSelf);
+    }
 }

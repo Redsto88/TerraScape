@@ -5,9 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Raiponce.unity
     guid: 58a83a6adadaf8448bada9809af6ea89
+  - enabled: 1
+    path: Assets/Scenes/Ugu3.unity
+    guid: 71a734bd49f96c244a98402673ee5155
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260,
       type: 2}
