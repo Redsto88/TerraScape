@@ -195,7 +195,7 @@ public class PlayerMovement : MonoBehaviour
                 speed -= 0.1f * Mathf.Sign(VerticalRight);
                 speed = Mathf.Clamp(speed, 0, 25);
                 int speedInt = (int)((speed*100));
-                speedText.text = "Speed: " + (((float)speedInt)/100).ToString();
+                speedText.text = "Movement speed: " + (((float)speedInt)/100).ToString();
             }
 
         //rotation de rotationAngle degrés
