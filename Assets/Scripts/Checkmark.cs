@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Checkmark : MonoBehaviour
 {
-    public void Move(Transform target)
+    public void Move(RectTransform target)
     {
-        transform.position = target.position + new Vector3(55, 0, 0);
+        GetComponent<RectTransform>().localPosition = target.localPosition /*+ new Vector3(10, 0, 0)*/;
     }
 }
